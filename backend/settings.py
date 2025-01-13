@@ -24,7 +24,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-s&(&-zrw(l#88)w6m90m_-&b5+0$lbt7yd&*@16^nigcq8wz0&'
 
-DEBUG = False
+DEBUG = True
 AUTH_USER_MODEL = 'authapp.User'
 ALLOWED_HOSTS = ['chjashore.online', 'www.chjashore.online', '86.48.3.219', '127.0.0.1']
 
@@ -112,23 +112,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'circuithouse',
-        'USER': 'ndcjashore1',
-        'PASSWORD': '123456NdcJ',
-        'HOST': '86.48.3.219',  
-        'PORT': '5432', 
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'circuithouse',
+#         'USER': 'ndcjashore1',
+#         'PASSWORD': '123456NdcJ',
+#         'HOST': '86.48.3.219',  
+#         'PORT': '5432', 
+#     }
+# }
 
 
 
