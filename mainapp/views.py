@@ -48,6 +48,20 @@ class BookAPIView(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         
         guest = serializer.save()
+        check_in_date = serializer.validated_data.get('check_in_date')
+        check_out_date = serializer.validated_data.get('check_out_date')
+
+        # Adjust times
+        if check_in_date:
+            check_in_date = check_in_date.replace(hour=12, minute=0, second=0)
+        if check_out_date:
+            check_out_date = check_out_date.replace(hour=11, minute=59, second=0)
+
+        # Save with updated times
+        serializer.save(
+            check_in_date=check_in_date,
+            check_out_date=check_out_date
+        )
         room = guest.room  
         room.availability_status = 'Booked'
         room.save()

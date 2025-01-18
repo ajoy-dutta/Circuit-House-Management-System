@@ -103,7 +103,7 @@ class Guest(models.Model):
         
         # Step 1: Calculate total days
         if self.check_in_date and self.check_out_date:
-            self.total_days = (self.check_out_date - self.check_in_date).days
+            self.total_days = (self.check_out_date - self.check_in_date).days+1
 
         # Step 2: Calculate rental price
         if self.room and self.user_type:
