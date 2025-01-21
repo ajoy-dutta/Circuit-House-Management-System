@@ -118,3 +118,8 @@ class StaffProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = StaffProfile
         fields = '__all__'
+
+class MediaSerializer(serializers.ModelSerializer):
+    class Meta:
+            model = Media
+            fields ='__all__'

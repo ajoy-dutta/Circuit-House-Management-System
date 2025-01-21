@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from datetime import date
+from django.utils import timezone
 
 # Users Table
 class User(AbstractUser):
@@ -72,3 +73,18 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
+class Media(models.Model):
+    MEDIA_TYPE_CHOICES = [
+        ('Image', 'Image'),
+        ('Video', 'Video'),
+    ]
+    title = models.CharField(max_length=255, blank=True, null=True)
+    image = models.ImageField(upload_to='img/', blank=True, null=True)
+    description = models.TextField()
+    media_type = models.CharField(
+        max_length=40,
+        choices=MEDIA_TYPE_CHOICES,
+        default='Image'
+    )
+    created_at = models.DateTimeField(default=timezone.now)

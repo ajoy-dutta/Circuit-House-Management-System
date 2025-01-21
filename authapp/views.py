@@ -182,3 +182,8 @@ class ContactView(APIView):
 class StaffProfileView(generics.ListCreateAPIView):
     queryset = StaffProfile.objects.all()
     serializer_class = StaffProfileSerializer
+
+class MediaAPIView(generics.ListCreateAPIView):
+    permission_classes = [IsAuthenticated]  # Only authenticated users can access
+    queryset = Media.objects.all()
+    serializer_class = MediaSerializer

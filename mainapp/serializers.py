@@ -138,7 +138,3 @@ class OtherCostSerializer(serializers.ModelSerializer):
         )
         return other_cost
 
-class MediaSerializer(serializers.ModelSerializer):
-    class Meta:
-            model = Media
-            fields ='__all__'
