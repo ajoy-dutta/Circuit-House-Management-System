@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from datetime import date,datetime
+from django.utils import timezone
+
 
 
 class Room(models.Model):
@@ -206,4 +208,19 @@ class CheckoutSummary(models.Model):
         self.grand_total = self.total_rental_cost + self.total_food_cost + self.total_other_cost
         super(CheckoutSummary, self).save(*args, **kwargs)
 
+
+class Media(models.Model):
+    MEDIA_TYPE_CHOICES = [
+        ('Image', 'Image'),
+        ('Video', 'Video'),
+    ]
+    title = models.CharField(max_length=255, blank=True, null=True)
+    description = models.TextField()
+    image = models.ImageField(upload_to='img/', blank=True, null=True)
+    media_type = models.CharField(
+        max_length=40,
+        choices=MEDIA_TYPE_CHOICES,
+        default='Image'
+    )
+    created_at = models.DateTimeField(default=timezone.now)
 

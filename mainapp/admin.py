@@ -13,3 +13,4 @@ admin.site.register(CheckoutSummary)
 #     list_display = ('name', 'total_days', 'total_rental_price')  
 
 admin.site.register(Guest)
+admin.site.register(Media)

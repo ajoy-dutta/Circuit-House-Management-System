@@ -137,3 +137,8 @@ class OtherCostSerializer(serializers.ModelSerializer):
             price=validated_data['price']
         )
         return other_cost
+
+class MediaSerializer(serializers.ModelSerializer):
+    class Meta:
+            model = Media
+            fields ='__all__'

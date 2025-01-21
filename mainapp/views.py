@@ -207,3 +207,8 @@ class OtherCostAPIView(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(date=date.today())  # Automatically set the current date
+
+class MediaAPIView(generics.ListCreateAPIView):
+    permission_classes = [IsAuthenticated]  # Only authenticated users can access
+    queryset = Media.objects.all()
+    serializer_class = MediaSerializer
