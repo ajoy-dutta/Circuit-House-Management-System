@@ -74,6 +74,9 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 
+from django.db import models
+from django.utils import timezone
+
 class Media(models.Model):
     MEDIA_TYPE_CHOICES = [
         ('Image', 'Image'),
@@ -81,6 +84,7 @@ class Media(models.Model):
     ]
     title = models.CharField(max_length=255, blank=True, null=True)
     image = models.ImageField(upload_to='img/', blank=True, null=True)
+    video = models.FileField(upload_to='videos/', blank=True, null=True)  # New video field
     description = models.TextField()
     media_type = models.CharField(
         max_length=40,
