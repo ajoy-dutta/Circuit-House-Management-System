@@ -187,3 +187,8 @@ class MediaAPIView(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated]  # Only authenticated users can access
     queryset = Media.objects.all()
     serializer_class = MediaSerializer
+
+class TourismCalendarAPIView(generics.ListCreateAPIView):
+    permission_classes = [IsAuthenticated]  # Only authenticated users can access
+    queryset = TourismCalendar.objects.all()
+    serializer_class = TourismCalendarSerializer

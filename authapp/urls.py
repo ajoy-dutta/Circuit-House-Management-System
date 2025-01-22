@@ -18,8 +18,9 @@ urlpatterns = [
     path('reset-password-link/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(),name='reset-password-link'),
     path('password_reset_complete/',auth_views.PasswordResetCompleteView.as_view(),name='password-reset-complete'),
     path('contact/', ContactView.as_view(), name='contact'),
-     path('staff-profile/', StaffProfileView.as_view(), name='staff-profile'),
-        path('media/',MediaAPIView.as_view(),name='media'),
+    path('staff-profile/', StaffProfileView.as_view(), name='staff-profile'),
+    path('media/',MediaAPIView.as_view(),name='media'),
+    path('calender/',TourismCalendarAPIView.as_view(),name='calender'),
 
 ]
 

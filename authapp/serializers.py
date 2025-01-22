@@ -123,3 +123,10 @@ class MediaSerializer(serializers.ModelSerializer):
     class Meta:
             model = Media
             fields ='__all__'
+
+class TourismCalendarSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= TourismCalendar
+        fields ='__all__'
+
+
