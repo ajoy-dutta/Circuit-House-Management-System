@@ -94,7 +94,7 @@ class Media(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
 class TourismCalendar(models.Model):
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=500)
     picture = models.ImageField(upload_to='img/', blank=True, null=True)
     description = models.TextField()
     date = models.DateField()
